@@ -22,7 +22,7 @@ public interface UserDao {
 
 
     @Query("SELECT * FROM user_profile")
-    LiveData<List<UserProfileDTO>> getAllParties();
+    LiveData<List<UserProfileDTO>> getAllUserProfile();
 
 //    @Query("SELECT * FROM user")
 //    List<UserProfile> getAll();

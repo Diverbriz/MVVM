@@ -6,7 +6,7 @@ import com.example.testmvvm.Domain.Model.UserProfile;
 import java.util.List;
 
 public class UserProfileOperations {
-    public static UserProfile addParty(String name,
+    public static UserProfile addUserProfile(String name,
                                        User creator,
                                        String address,
                                        String description,

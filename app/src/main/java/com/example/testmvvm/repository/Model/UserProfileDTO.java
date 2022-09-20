@@ -47,7 +47,7 @@ public class UserProfileDTO extends UserProfile {
         this.imagesDTO = new Gson().toJson(images);
     }
 
-    public static UserProfileDTO convertFromParty(UserProfile profile) {
+    public static UserProfileDTO convertFromProfile(UserProfile profile) {
         UserProfileDTO dto = new UserProfileDTO();
 
         dto.setId(profile.getId());

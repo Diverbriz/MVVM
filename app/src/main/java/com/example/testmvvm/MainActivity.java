@@ -10,6 +10,7 @@ import androidx.navigation.NavController;
 import androidx.room.Room;
 
 import com.example.Database.UserDatabase;
+import com.example.testmvvm.DI.ServiceLocator;
 import com.example.testmvvm.databinding.ActivityMainBinding;
 import com.example.testmvvm.viewModels.TickViewModel;
 import com.example.view.fragments.bottom_nav.HomeFragment;
@@ -22,15 +23,22 @@ public class MainActivity extends AppCompatActivity {
     private TickViewModel model;
     ActivityMainBinding binding;
 
-    NavController navController;
+
     UserDatabase userDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
+        ServiceLocator.getInstance().initBase(getApplication());
+
+
+
         userDatabase = Room.databaseBuilder(getApplicationContext(),
                 UserDatabase.class, "user-database").build();
+
+
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
